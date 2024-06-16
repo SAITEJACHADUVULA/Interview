@@ -1,0 +1,276 @@
+1. 
+Guess the output
+
+const b = {
+    name:'Sai',
+    f:function(){
+        var self=this;
+        console.log(this.name);
+        (function(){
+            console.log(this.name);
+            console.log(self.name);
+        }())
+    }
+}
+
+Output: 
+Sai
+undefined
+Sai
+
+2.
+let withdraw = 676;
+const denominations = [200,50,100,20,5,2,1];
+
+function getDenomination(){
+    let denomiations_array = [];
+    denominations.sort((a,b)=>b-a);
+    for(let i=0;i<denominations.length;i++){
+     let denomination_count = Math.trunc(withdraw/denominations[i]);
+     withdraw = withdraw % denominations[i];
+     for(let j=0;j<denomination_count;j++){
+      denomiations_array.push(denominations[i]);
+     }
+    }
+    return denomiations_array;
+}
+
+Output : [200,200,200,50,20,5,1]
+
+
+3.
+Anagram bored-robed
+
+let str1="bored";
+let str2="robed";
+
+function isAnagram(){
+    if(str1.length===str2.length){
+        str1 = str1.split('').sort().join("");
+        str2 = str2.split('').sort().join("");
+        return str1==str2 ? true : false;
+    
+    }else{
+        return false;
+    }
+}
+
+4. 
+Flat an Array
+let input = [1,2,3,[4,5,[6,7,8,[9,10,11,23]]]];
+//[4,5,[6,7,8,[9,10,11,23]]]
+let output = [];
+
+function flatArray(input){
+    for(let i=0;i<input.length;i++){
+        if(Array.isArray(input[i])){
+          flatArray(input[i]);
+        }else{
+            output = [...output,input[i]];
+        }
+    }
+}
+
+flatArray(input);
+console.log(output);
+
+5.
+Find Min and Max in an array
+
+function findMinMax(array){
+    if(!Array.isArray(array)) return "Invalid Input";
+    
+    let obj = {
+        min:0,
+        max:0
+    };
+    // obj['min'] = Math.min(...array);
+    // obj['max'] = Math.max(...array);
+    
+    for(let i=0;i<array.length;i++){
+        if(array[i]<obj['min']) obj['min'] = array[i];
+        if(array[i]>obj['max']) obj['max'] = array[i];
+    }
+    return obj;
+}
+
+let output = findMinMax([1,5,7,8,9,0]);
+console.log(output);
+
+
+6.
+Reverse an Array
+function reverseAnArray(array){
+    if(!Array.isArray(array)) return "Invalid Input";
+    let reverse_array = [];
+    let max = array.length-1;
+    for(let i=max;i<=max;i--){
+        reverse_array.push(array[i]);
+        if(i==0) break
+    }
+    return reverse_array;
+}
+
+let output = reverseAnArray([1,5,7,8,9,0]);
+console.log(output);
+
+7.
+Call , Apply and Bind
+let obj1 = {
+    a:1,
+    b:2
+}
+// let c = ()=>{
+//         console.log(this);
+//     }
+    
+// let callMe = c.bind(obj1);
+// callMe();
+
+const callMe = (...arr) => {
+    console.log('Call me',arr);
+}
+
+callMe.call(obj1,obj1.a,obj1.b);
+
+let array = [1,2,3]
+
+callMe.apply(obj1,array);
+
+const bindCall = callMe.bind(obj1,obj1.a,obj1.b);
+
+bindCall();
+
+8.
+Find Common Elements between two arrays
+
+let array1 = [1,2,3,3,4,5];
+let array2 = [3,4,5,6,7];
+
+function getCommonElements(array1,array2){
+    array1 = [...new Set(array1)];
+    array2 = [...new Set(array2)];
+    return array1.filter(ele=>array2.indexOf(ele)!=-1);
+}
+
+let result = getCommonElements(array1,array2);
+
+console.log(result);
+
+9.
+Guess the output (Bind)
+var vehical = "car";
+
+var obj = {
+    vehical:"bus",
+    getVehical:function(){
+        console.log(this.vehical);
+    }
+}
+
+let result = obj.getVehical();
+let result1 = obj.getVehical;
+let result2 = obj.getVehical.bind(obj);
+result1();
+result2();
+
+10.
+Remove Duplicates
+let array = [5,2,5,5,6,7,7,8,9];
+
+let duplicates = array.filter((ele,index,self) => {if(index == self.indexOf(ele)){
+ return ele   
+}});
+
+console.log(duplicates.sort())
+
+11.
+Link Geneartor 
+let counter=0;
+function generateLink(){
+    return (function (){
+        console.log(`link ${counter}`);
+        counter++;
+        return `link ${counter}`;
+    })()
+}
+
+generateLink();
+generateLink();
+
+12.
+Sum of n natural numbers O(n) - linear
+function sumOfN(n){
+    let sum = 0;
+    for(let i=1;i<=n;i++){
+     sum+=i;
+    }
+    return sum;
+}
+
+let result = sumOfN(100);
+
+console.log(result);
+
+Algorithm (n * (n+1))/2 - O(1)
+
+function sumOfNAlgo(n){
+   return (n * (n+1))/2
+}
+
+O(n2) - Quadratic
+
+O(n3) - Cubic
+
+O(logn) - Logarathamic
+
+13.
+Function to get fibonacci sequence given the value n
+Input n=5 output [0,1,1,2,3]
+--brootforce
+
+function getFinocciSequence(n){
+    let baseArray = [0,1];
+    
+    if(n==1) return [0];
+    else if(n==2) return [0,1];
+    else{
+        for(i=0;i<n-2;i++){
+            let sum = baseArray[i]+baseArray[i+1];
+            baseArray.push(sum);
+        }
+        return baseArray;
+    }
+}
+
+let result = getFinocciSequence(8);
+console.log(result);
+
+14.
+Given a template literal and an object with a key value pair replace the variables with given keys
+Example `he is ${name} very ${mood}`;
+{
+name:"Sai",
+mood:"Good"
+}
+
+let template = `\${name} is a \${type}`;
+let values = {name:"Python", type:"Programming language"};
+
+for(let key in values) {
+    let pattern = new RegExp(`\\$\\{${key}\\}`, "g");
+    template = template.replace(pattern, values[key]);
+}
+
+console.log(template);
+
+//Create a generalized function for throttling
+//Create a generalized function for debounce
+//There are 3 radio buttons on click of any background color should changes #CSS Approach
+//Find if given array is having atleast one string is similar (AAA, ABC,BAC, BBC,CBA) - true
+//Create a function to push a random number in an array to last of array 
+[1,0,4,0,9,0,0,7];
+[1,4,9,7,0,0,0,0];
+
+
+
