@@ -1,0 +1,31 @@
+These questions focus on your ability to apply SQL knowledge to solve analytical problems within an employee and department context. They require logical thinking, understanding of joins, aggregations, and window functions.
+Easy:
+Identify employees earning above the average salary in their department.
+List departments with the highest and lowest total salaries.
+Find managers with the most direct reports.
+Calculate the average age of employees within each department, ordered by descending average.
+For each department, identify the employee with the longest tenure (time with the company).
+Medium:
+Show the percentage of employees in each department who have been with the company for over 5 years.
+Find employees who belong to multiple departments (hint: self-joins).
+Identify departments with more than 10% employee turnover rate in the past quarter.
+Rank departments based on the combined salary of their top 5 earners.
+Calculate the running total of employee salaries, grouped by department.
+Hard:
+For each department, find the employee with the salary closest to the department average.
+Identify any manager whose direct reports earn significantly more than them.
+Predict the department with the highest projected employee headcount for the next quarter based on historical hiring trends.
+Analyze employee salary variance within each department and highlight outliers.
+Identify employees who have switched departments more than twice in the past year.
+Bonus:
+Create a dashboard visualizing key employee and department metrics using your SQL queries.
+Explain how you would optimize your queries for performance on large datasets.
+Discuss potential limitations of your solutions and suggest alternative approaches.
+Tips:
+Clearly explain your thought process and rationale for choosing specific SQL commands.
+Demonstrate your understanding of different join types and how they would affect the results.
+Show comfort with aggregate functions, window functions, and subqueries.
+Highlight your ability to handle NULL values and potential data discrepancies.
+Be prepared to answer follow-up questions and adapt your queries based on additional information.
+These are just a few examples, you can modify and expand these scenarios to create diverse and challenging interview questions that assess your analytical SQL skills within the employee and department domain.
+has context menu
