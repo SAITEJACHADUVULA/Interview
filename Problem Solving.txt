@@ -2,7 +2,7 @@
 Guess the output
 
 const b = {
-    name:'Sai',
+    name:'Raksha',
     f:function(){
         var self=this;
         console.log(this.name);
