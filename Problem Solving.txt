@@ -272,5 +272,53 @@ console.log(template);
 [1,0,4,0,9,0,0,7];
 [1,4,9,7,0,0,0,0];
 
+15.
+Factorial of number
+function getFactorialOfN(n){
+    let result = 1
+    for(let i = n;i>1;i--){
+        result *= i;
+    }
+    return result;
+}
+
+let output = getFactorialOfN(5);
+
+console.log(output);
+
+
+//Given a value n determine if n is a prime number or not
+
+Solution1 :
+function isPrimeNumber(n){
+    let count = 0;
+    for(let i=2;i<=n;i++){
+        if(n%i == 0)  count++;
+    }
+    if(count>1 || n==1) return 'given number is not a prime number';
+    else return 'given number is prime number';
+}
+
+let result = isPrimeNumber(1);
+
+console.log(result);
+
+Time complexity : O(n)
+
+Solution 2:
+function isPrimeNumber(n){
+    if(n<2) return false;
+    for(let i=2;i<Math.sqrt(n);i++){
+        if(n%i==0) return false;
+    }
+    return true;
+}
+
+let result = isPrimeNumber(1);
+
+console.log(result);
+
+Time complexity : O(sqrt(n))
+
 
 
