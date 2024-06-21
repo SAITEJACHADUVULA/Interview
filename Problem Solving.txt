@@ -287,7 +287,8 @@ let output = getFactorialOfN(5);
 console.log(output);
 
 
-//Given a value n determine if n is a prime number or not
+16.
+Given a value n determine if n is a prime number or not
 
 Solution1 :
 function isPrimeNumber(n){
@@ -320,5 +321,42 @@ console.log(result);
 
 Time complexity : O(sqrt(n))
 
+17.
+Power of two
+
+Solution 1.
+function checkIfPowerOfTwo(n) {
+    for (let i = 0; i <= n; i++) {
+        if (n == Math.pow(2, i)) return true;
+    }
+
+    return false;
+}
+
+let result = checkIfPowerOfTwo(5);
+
+console.log(result);
+
+Time complexity - O(n)
+
+Solution2.
+function isPowOfTwo(n){
+    if(n<1) return false;
+    while(n<1){
+        if(n%2!=0) return false
+        n=n/2;
+    }
+    return true
+}
+
+//Time Complexity is O(logn) 
+
+Solution 3.
+function isPowOfTwoBitwise(n){
+    if(n<1) return false;
+    return (n & (n-1)) == 0 //Bitwise And between n & n-1 will always be zero for power of 2
+}
+
+//TimeComplexity 0(1)
 
 
