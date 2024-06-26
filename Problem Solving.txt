@@ -264,14 +264,6 @@ for(let key in values) {
 
 console.log(template);
 
-//Create a generalized function for throttling
-//Create a generalized function for debounce
-//There are 3 radio buttons on click of any background color should changes #CSS Approach
-//Find if given array is having atleast one string is similar (AAA, ABC,BAC, BBC,CBA) - true
-//Create a function to push a random number in an array to last of array 
-[1,0,4,0,9,0,0,7];
-[1,4,9,7,0,0,0,0];
-
 15.
 Factorial of number
 function getFactorialOfN(n){
@@ -391,4 +383,49 @@ function findFactorial(n){
 let result = findFactorial(8);
 console.log(result);
 Time complexity - O(n)
+
+20.
+Create a generalized function for throttling
+
+21.
+Create a generalized function for debounce
+
+22.
+There are 3 radio buttons on click of any background color should changes #CSS Approach
+
+23.
+Find if given array is having atleast one string is similar (AAA, ABC,BAC, BBC,CBA) - true
+
+24.
+Create a function to push a random number in an array to last of array 
+[1,0,4,0,9,0,0,7];
+[1,4,9,7,0,0,0,0];
+
+25.
+Print dynamic url or link using closures
+
+26.
+Take a array of positive integers and return the length of the longest Increasing Sequence [LIS].
+LIS is a subset of the original list where the numbers are in sorted order, from lowest to highest, and are in increasing order.
+The sequence does not need to be unique or contnious and there can be several different subsets.
+
+Example : [4,3,5,1,6]
+Output : [3,5,6] [1,6]
+Output should be length of longest subsequence which is 3
+
+Example : [9,9,4,2] Output : 1
+
+Example : [10,22,9,33,21,50,41,60,22,68,90]; Output : 7
+
+27.
+If the Brackets are correctly matched and each one is accounted for. Otherwise return o.
+For ex if str is "(hello [world])(!)" output 1 3 coz, are the brackets are matched and there are 3 pairs of brackets are matched.
+If str containes no brackers return 1
+Input :
+"(coder)[byte)]"
+Output 0
+
+Input:
+"(c([od]er)) b(yt[e])"
+Output 1 5
 
