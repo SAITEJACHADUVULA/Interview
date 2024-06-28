@@ -395,11 +395,45 @@ There are 3 radio buttons on click of any background color should changes #CSS A
 
 23.
 Find if given array is having atleast one string is similar (AAA, ABC,BAC, BBC,CBA) - true
+Solution:
+function findIfAlteastOneIsSimilar(arr){
+    let nonDuplicateArray = [];
+    for(let i = 0;i<arr.length;i++){
+       nonDuplicateArray[i] = [...new Set([...arr[i]].sort())].join("");
+    }
+
+    return !(nonDuplicateArray.length == [...new Set(nonDuplicateArray)].length);
+
+}
+
+let result = findIfAlteastOneIsSimilar(['AAA', 'ABC','BAC', 'BBC','CBA'])
+console.log(result);
 
 24.
 Create a function to push a random number in an array to last of array 
 [1,0,4,0,9,0,0,7];
 [1,4,9,7,0,0,0,0];
+
+Solution:
+function pushZerosToLast(arr){
+    let nonZeroIndex = 0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]!=0){
+            arr[nonZeroIndex] = arr[i];
+            nonZeroIndex++;
+        }
+    }
+
+    for(let i=nonZeroIndex;i<arr.length;i++){
+        arr[i]=0;
+    }
+    return arr;
+}
+
+let input=[1,0,4,0,9,0,0,7]
+let response = pushZerosToLast(input);
+
+console.log(response);
 
 25.
 Print dynamic url or link using closures
@@ -416,6 +450,27 @@ Output should be length of longest subsequence which is 3
 Example : [9,9,4,2] Output : 1
 
 Example : [10,22,9,33,21,50,41,60,22,68,90]; Output : 7
+Solution:
+function maxLIS(arr){
+    let n = arr.length;
+    let subArrayCount = new Array(n).fill(1);
+    for(let i=0;i<arr.length;i++){
+        let tempArray = [arr[i]];
+        if(i+1 < n){
+            for(let j=i+1;j<arr.length;j++){
+                if(arr[j]>arr[j-1]) tempArray.push(arr[j]);
+            }
+        }
+        console.log(tempArray);
+        subArrayCount[i] = tempArray.length;
+    }
+    return Math.max(...subArrayCount);
+
+}
+
+let input = [4,3,5,1,6]
+let response = maxLIS(input);
+console.log(response);
 
 27.
 If the Brackets are correctly matched and each one is accounted for. Otherwise return o.
@@ -428,4 +483,61 @@ Output 0
 Input:
 "(c([od]er)) b(yt[e])"
 Output 1 5
+Solution:
+function matchedBrackets(str){
+    let brackerStack = [];
+    let bracketCount = 0;
+    for(let char of str){
+        if(char=='(' || char=='['){
+            brackerStack.push(char);
+            bracketCount++;
+            console.log(bracketCount);
+        }
+        else if(char===")" && brackerStack.pop() != "(") return 0;
+        else if(char==="]" && brackerStack.pop() != "[") return 0;
+    }
 
+    return brackerStack.length==0 ? `1 ${bracketCount}` : 0
+}
+
+let input = "(c([od]er)) b(yt[e])";
+let response = matchedBrackets(input);
+
+console.log(response);
+
+28.
+Ninja is given a few numbers, and he is being asked to rearrange the numbers so that every second element is greater than its left and right element.
+Suppose the given array is [1, 2, 3, 4, 5] then the rearranged array can be [1, 3, 2, 5, 4].
+function reArrangeNumber(arr){
+    arr = arr.sort((a,b)=>a-b);
+    for(let i=0;i<arr.length;i++){
+        if(i%2!=0 && i+1<arr.length){
+            [arr[i+1],arr[i]] = [arr[i],arr[i+1]];
+        }
+    }
+
+    return arr;
+}
+let input = [1,2,3,4,5];
+let response  = reArrangeNumber(input);
+console.log(response);
+
+29.
+Code to sort a space-separated string of numbers in ascending order based on the sum of their digits "4444 102 306 508 905 77 213 667"
+
+Solution:
+function sortNumberString(str){
+    let result = [];
+    let sum=0;
+    for(let char of str){
+        if(char==" "){
+            result.push(sum);
+            sum=0;
+        }
+        else sum+=parseInt(char);
+    }
+    return result;
+}
+let input = "4444 102 306 508 905 77 213 667";
+let response = sortNumberString(input).sort((a,b)=>a-b);
+console.log(response);
