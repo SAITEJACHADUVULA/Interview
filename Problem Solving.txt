@@ -564,4 +564,4 @@ Time Complexity : O(n)
 3. If value of mid index == taget return taget
 4. Else if value of mid index < target then change the left index to mid+1
 5. Else if value of mid index > target the change the right index to mid-1 and continue the loop till left index<=right index
-
+6. Time complexity of the above solution is O(log(n))
