@@ -541,3 +541,27 @@ function sortNumberString(str){
 let input = "4444 102 306 508 905 77 213 667";
 let response = sortNumberString(input).sort((a,b)=>a-b);
 console.log(response);
+
+30.
+Given an array [-5,2,10,4,6] and a target element 10 return the index of target in array if exists else -1
+
+let arr = [-5,2,10,4,6];
+let target = 10;
+function linearSearch(arr,target){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]==target) return i;
+    }
+    return -1;
+}
+
+console.log(linearSearch(arr,target));
+
+Time Complexity : O(n)
+
+31. Binary Search
+1. Array should be sorted for binary Search
+2. Calculate Mid Index on each iteration
+3. If value of mid index == taget return taget
+4. Else if value of mid index < target then change the left index to mid+1
+5. Else if value of mid index > target the change the right index to mid-1 and continue the loop till left index<=right index
+
