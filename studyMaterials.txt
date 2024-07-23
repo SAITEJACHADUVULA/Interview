@@ -1,0 +1,195 @@
+HTML & CSS:
+Positioning - Absolute, Relative, Fixed, Sticky.
+CSS Grid (auto-fill, auto-fit, etc.) - most libraries like bootstrap, tailwind provide an easier way to do this, but understand how this works under the hood. This is one of the most important and useful CSS concepts.
+CSS Flex.
+CSS Animations (Keyframes).
+HTML - semantic tags (instead of using div for everything, use main, article, etc., for SEO).
+CSS Media Queries - integral to responsive web design.
+Z-index.
+CSS variables.
+CSS complex selectors - select a child, select the 2nd child, select all children except the second, select a sibling, etc.
+JS:
+DOM manipulation - append a child, delete an element, dynamic content rendering using vanilla JS by modifying textContent, etc.
+DOM events - including special events for elements like Video, where you have "start", "stop", "resize", etc.
+Understanding CORS.
+Understanding cookies.
+Understanding OAuth2/SSO flows (with and without a backend server).you redirect user to Microsoft-- enter credentials -- microssoft send back to portal with some state value 
+Handling BLOBS, and file uploads.
+Array methods like map, filter, reduce.
+Understanding generators.
+Understanding streams, event emitters, and async iterators.
+Get audio and video from the user's devices using the getUserMedia API.
+Get user's display screen, also using the same API.
+Record the display screen stream using the mediaRecorder API.
+Creating download links.
+Understanding the difference between Server Side Rendering and Client Side Rendering.
+Check out EJS and Next.js for SSR - both have totally different paradigms.
+React.js, Angular for CSR.
+Understanding the Web Socket protocol (used for real-time data transfer - for example, chats).
+You need a server that implements the socket protocol for this. Try Socket.io.
+(Very Advanced) Using WebRTC for initiating a peer-to-peer connection (instead of peer-to-server-to-peer) and initiating video/audio calls. 
+Angular:
+Understand RxJS, and its operators.
+DOM manipulation using Angular-specific methods - for instance, ViewChild, ViewChildren, etc.
+Using TypeScript extensively - using advanced types like Record, Partial, DeepPartial, keyof, etc.
+Understanding how decorators work - not just Angular decorators, but decorators in general.
+Create custom class, method, parameter, and property decorators.
+
+JWT Token vs Session based cookies :  https://medium.com/@prashantramnyc/difference-between-session-cookies-vs-jwt-json-web-tokens-for-session-management-4be67d2f066e
+Lifecycle Hooks : https://angular.io/guide/lifecycle-hooks
+Promises non-blocking nature : https://www.reddit.com/r/learnjavascript/comments/10u9607/promises_are_nonblocking_so_why/
+Namaste Js : https://alok722.github.io/namaste-javascript-notes/dist/lectures.html
+Authentication vs Authorization : https://medium.com/@audira98/authorization-and-authentication-cd0a7c994278
+Local Storage vs Session Storage : https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+Change detection strategy in angular :https://dev.to/mana95/angular-change-detection-and-onpush-strategy-4l63
+
+Main.ts :  Its main aim is to point the Angular framework at the core module of your application and let it trigger the rest of your 
+application source code from that point
+
+Revering a linked list
+BST basic 
+Binary Search in an array
+
+DB : Relationships - One to One / One to Many/Many to One / Many to Many
+
+grid-template-rows grid-template-columns
+https://www.simplilearn.com/tutorials/css-tutorial/css-positioning -- do till slide 10 
+
+
+justify-content — controls alignment of all items on the main axis. (horizontal)
+align-items — controls alignment of all items on the cross axis.	(vertical)
+
+Box model Content - The content of the box, where text and images appear
+Padding - Clears an area around the content. The padding is transparent
+Border - A border that goes around the padding and content
+Margin - Clears an area outside the border. The margin is transparent
+
+z-index : When elements are positioned, they can overlap other elements.The z-index property specifies the stack order of an element 
+(which element should be placed in front of, or behind, the others).z-index only works on positioned elements 
+(position: absolute, position: relative, position: fixed, or position: sticky) and flex items (elements that are direct children of display: flex elements).
+
+Template driven , reactive forms(dynamic) -- given below
+1.Template-driven Forms
+Template-driven forms rely heavily on directives embedded within the template HTML. They are ideal for simpler forms with basic validation requirements. Here are the key characteristics:
+
+Template-driven: Form controls and validation logic are primarily defined in the template.
+Directives: Use Angular directives such as ngModel, ngForm, and ngSubmit.
+Two-way Data Binding: Uses Angular's two-way data binding ([(ngModel)]) to link the form controls and data model.
+Synchronous Validation: Validation is typically done using template-driven directives (required, minLength, maxLength, etc.).
+Less Control: Limited programmatic access to form controls and their state from the component class.
+
+2. Reactive Forms
+Reactive forms are more code-centric and provide a more flexible and scalable approach for managing complex forms. Here are the key characteristics:
+
+Model-driven: Form controls and validation logic are defined programmatically in the component class.
+FormBuilder Service: Uses FormBuilder service to create and manage form controls and groups.
+Immutable Data Model: Form values are stored in a model (FormGroup and FormControl) that can be modified programmatically.
+Asynchronous Validation: Supports asynchronous validation using observables.
+More Control: Greater flexibility and control over form validation, dynamic forms, and complex form scenarios.
+
+virtual environment -- helps you to run different versions of files/packages
+
+Webpack 
+zone.js -- change detection strategy (refreshes automatically) uses zone.js
+
+Offline Background Operation 
+https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Offline_and_background_operation
+
+Prototypal Inheritance , Deep & Shallow Copy, Web Sockets , DNS , Memoization (Currying) (paste links here)
+Media queries , window size , viewport. 
+
+A shallow copy is a copy that only goes one level deep. In other words, it copies the object and all its properties, but any nested objects or arrays will still reference the same memory location as the original object. 
+It means that if you make changes to the nested object, it will also affect the original object, as well as the copied object.
+Here is an example of shallow copying an object using the spread operator:
+const originalObject = { a: 1, b: { c: 2 } };  
+const shallowCopy = { ...originalObject };  
+
+A deep copy is a copy that creates a new object with new memory locations for all of its properties and nested objects or arrays. It means that if you make 
+changes to the copied object or any of its nested objects or arrays, it will not affect the original object.
+Here is an example of deep copying an object using the JSON.parse() and JSON.stringify() methods:
+const originalObject = { a: 1, b: { c: 2 } };  
+const deepCopy = JSON.parse(JSON.stringify(originalObject));  
+
+Event Propagation : Bubbling & Capturing https://www.geeksforgeeks.org/what-is-event-bubbling-and-event-capturing-in-javascript/
+Interceptor , AuthGuard, Pure & Impure Pipe , RxJS operators
+
+
+weatherapp apikey : 013ce04116a334044560309d2fac633c
+//by city name 
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+https://api.openweathermap.org/data/2.5/weather?q=kolkata&appid=013ce04116a334044560309d2fac633c
+To fetch temp in degree celcius (default shows unit=standard) https://api.openweathermap.org/data/2.5/weather?q=kolkata&appid=013ce04116a334044560309d2fac633c&units=metric
+change weather condition image to animation 
+default location --- should be default where user is present 
+show data numbers like progress bar 0 to 48
+extra details -- temp at night , weather conditions 
+Host your website on github -- vercel
+
+Array String --- Tree , Graph  
+Find duplicates in an array --- new Set(arr);  array.from(arr1);
+Two pointer --- 
+
+
+Webpack is a popular module bundler used in Angular projects (starting from Angular CLI version 6) to bundle all the JavaScript, CSS, and other assets into 
+optimized bundles for deployment. When you build an Angular project using Angular CLI, Webpack generates several files in the dist directory by default. 
+Here are the main files that Webpack bundles an Angular project to and their uses:
+
+1. Main JavaScript Bundle (main.js)
+File Name: main.js
+Use: This is the primary bundle that contains all the application code, including Angular modules, components, services, and other dependencies.
+Description: The main.js bundle is the entry point of your application. It includes the compiled TypeScript/JavaScript code of your Angular application, along 
+with Angular framework code and third-party dependencies. This file is crucial for running your Angular application in the browser.
+2. Polyfills Bundle (polyfills.js)
+File Name: polyfills.js
+Use: Contains polyfills for browser compatibility.
+Description: Modern web features and APIs are not universally supported by all browsers. The polyfills.js bundle includes polyfills that provide missing 
+functionalities to ensure your Angular application runs correctly across different browsers. These polyfills are essential for features like fetch, Promise, 
+Object.assign, etc.
+3. Styles Bundle (styles.css)
+File Name: styles.css
+Use: Contains compiled CSS styles for the application.
+Description: The styles.css file bundles all the CSS styles defined in your Angular project. This includes styles defined in your component stylesheets (styles.css or styles.scss) and third-party CSS libraries. This bundle ensures that all styles are applied consistently across your application.
+4. Vendor Bundle (vendor.js)
+File Name: vendor.js
+Use: Contains third-party dependencies and Angular framework code.
+Description: The vendor.js bundle includes all external dependencies and Angular framework code required by your application. This can include libraries like 
+Angular core modules (@angular/core, @angular/common, etc.), RxJS, and other third-party libraries installed via npm or yarn.
+ Separating vendor code into its own bundle helps in optimizing caching and reducing the initial load time of the application.
+5. Source Maps
+File Extension: .js.map, .css.map
+Use: Source maps provide a mapping between the original source code and the bundled/minified code.
+Description: When you build your Angular application with Webpack, it generates source map files (main.js.map, polyfills.js.map, styles.css.map, etc.).
+ Source maps are useful during development and debugging because they allow browsers and developer tools to map errors, logs, and breakpoints back to the 
+original TypeScript/JavaScript/CSS files, making it easier to debug and trace issues in your application.
+Other Files and Assets
+Index HTML: The index.html file in the dist directory is the entry point of your Angular application and is usually used to include necessary scripts and stylesheets.
+
+Assets (Images, Fonts): Webpack can also bundle and optimize static assets such as images, fonts, and other files referenced in your application. These assets are typically placed in the assets folder in the dist directory.
+
+Summary
+Webpack bundles an Angular project into several main files (main.js, polyfills.js, styles.css, vendor.js) and accompanying source map files. 
+These bundles optimize the deployment and performance of your Angular application by minimizing file sizes, reducing HTTP requests, and ensuring 
+compatibility across browsers. Understanding these files helps in optimizing and troubleshooting Angular applications effectively.
+
+Lazy Loading --
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'customers', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+In the above example:
+
+The CustomerModule is lazy loaded when the /customers route is accessed.
+The loadChildren property uses dynamic import (import('./customer/customer.module').then(m => m.CustomerModule)) to asynchronously load the module only 
+when needed.
+
+Polyfills - https://dev.to/srishtikprasad/polyfill-in-javascript-mapfilterreduce-2d38
