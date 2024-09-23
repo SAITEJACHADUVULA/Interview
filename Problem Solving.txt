@@ -682,3 +682,132 @@ Reverse string
 Remove element
 Logest substring without repeating characters
 Remove duplicates from sorted arrays
+
+//Check if string is valid braces - yet to solve
+const str1 = "[{}]";
+const str2 = "[{[(())]}][])}]";
+const  str3 = "[)]";
+
+function validBraces(str){
+    let bracesStack = [];
+    let bracessArray = str.split("");
+    console.log(bracessArray);
+    let isBraces = true;
+    for(let index=0;index<bracessArray.length;index++){
+        if(bracessArray[index].includes(["[","{","("])){
+            bracesStack.push(bracessArray[index]);
+        }else if(bracessArray[index]==")"){
+            if(bracesStack.pop() != "(") return false;
+        }else if(bracessArray[index]=="}"){
+            if(bracesStack.pop() != "{") return false;
+        }else if(bracessArray[index]=="]"){
+            if(bracesStack.pop() != "[") return false;
+        }
+    }
+    return true;
+}
+
+
+let res1 = validBraces(str2);
+console.log(res1);
+
+//Object destructuring of a nested object and assigning variables addess , city and state example
+
+//Class style inheritance in JavaScript
+
+// const res = multiply(5)(6)
+ 
+
+// function multiply(a){
+//     return function mul(b){
+//         return a*b;
+//     }
+// }
+
+// console.log(res);
+
+
+
+// let obj = {'name': "Amit", 'age': 25}
+// let temp = obj;
+// obj.age = 30;
+// console.log(temp) //{}
+
+
+// let x = '';
+ 
+// if (x !=x)
+// {
+// console.log("Nothing is impossible")
+// }
+
+
+
+// const res = multiply(5,6,7)
+// const res1 = multiply(1,2,3,4,5)
+
+// function multiply(...args){
+//     return args.reduce((a,b)=>a*b,1);
+// }
+
+// class Animal{
+//     name;
+//     sound;
+//     constructor(name,sound){
+//         this.name = name;
+//         this.sound = sound;
+//     }
+//     printAnimal(){
+//         console.log(`${this.name} makes sound of ${this.sound}`);
+//     }
+// }
+
+// class Dog extends Animal{
+//     breed ;
+//     age;
+//     constructor(name,sound,breed,age){
+//         super(name,sound);
+//     }
+// }
+
+// const dog = new Dog('dog','bow bow','indian','12');
+
+// dog.printAnimal();
+
+
+
+// let input = [1,5,-9,-7,8] //n; //continious sub array which return max sum;
+
+// function maxSubArray(arr){
+//     let max = arr[0];
+//     let maxSubArray = [];
+//     for(let i=0;i<arr.length;i++){
+//         for(let j=i+1;arr.length;j++){
+//             let m = sum(i,j);
+//             if(max > m) //push elements to maxSubArray;
+//         }
+//     }
+// }
+
+// function sum(i,j){
+//     let s = 0;
+//     for(let index=i;index<j;index++){
+//         s+=input[index];
+//     }
+//     return s;
+// }
+
+
+//Find first non repeating character
+const str = "inddia is my nation";
+
+function findNonRepeatingChar(str){
+    let input = str.split("");
+    for(let i=0;i<input.length;i++){
+        let str_sub = str.substring(i+1);
+        console.log(input[i],str_sub);
+        if(!str_sub.includes(input[i])) return [i,input[i]];
+    }
+}
+
+console.log(findNonRepeatingChar(str))
