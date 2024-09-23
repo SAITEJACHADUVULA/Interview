@@ -605,3 +605,80 @@ function recursiveBinarySearch(arr, target, left, right) {
 console.log(recursiveBinarySearch([-5,2,4,6,10],11,0,[-5,2,4,6,10].length-1));
 
 Time complexity : O(logn)
+
+//Given an array return the maximum product of 3 numbers
+Solution : function findMaxOfthreeNumber(arr){
+    let arr_len = arr.length;
+    if(arr_len<3) return 'Invalid Length provided'
+    arr.sort((a,b)=>a-b);
+    let product1=arr[arr_len-1] * arr[len-2] * arr[len-3];
+    let product2=arr[0]*arr[1]*arr[arr_len-1];
+    return Math.max(product1,product2);
+}
+
+//Given a number convert the number to roman number
+function getRomanNumber(num){
+    if(num>20) return 'Please enter number less than 20'
+    const romanMap = {
+        1:"I",
+        4:"IV",
+        5:"V",
+        9:"IV",
+        10:"X",
+        14:"XIV",
+        15:"XV",
+        19:"XIX",
+        20:"XX"
+    }
+    let count=0;
+    let roman;
+    while(num>=1){
+        console.log(num);
+        if(!roman && romanMap[num]){
+            roman = romanMap[num];
+            break;
+        }
+        num = num-1;
+        count++
+    }
+    for(let i=0;i<count;i++){
+        roman+="I";
+    }
+    
+    return roman
+}
+
+const result = getRomanNumber(20);
+console.log(result);
+
+//Find the maximum sum of a subarray of size k in the given array nums.
+//Sliding Window Solution
+
+let nums = [1, 4, 2, 10, 23, 3, 1, 0, 20]; //0 1 2 3 4 5 6 7 8
+//len= 9
+let k = 4
+function findMaxOfSubArray(arr,k){
+    if(arr.length<k) return 'Invalid input';
+    let firstFive = arr.slice(0,k);
+    let total = firstFive.reduce((a,b)=>a+b,0);
+    let max = total;
+    for(let i=0;i<arr.length-k;i++){
+     total = total-arr[i]+arr[i+k];
+        if(total>max) max=total;
+    }
+    return max;
+}
+
+const result = findMaxOfSubArray(nums,k);
+console.log(result);
+
+Two Pointer technique
+Input should be sorted
+//Problems
+Two sum II - Input array is sorted
+Valid Palindrome
+Move zeros
+Reverse string
+Remove element
+Logest substring without repeating characters
+Remove duplicates from sorted arrays
