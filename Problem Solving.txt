@@ -838,3 +838,30 @@ new Promise(function(resolve) {
   console.log('promise2');
 });
 console.log('script end');
+
+const nums = [1,2,3,4,5,6,7];
+nums.forEach((n) => {
+    if(n%2 === 0) 
+      break;
+    console.log(n);
+
+});
+
+var a = true + true + true * 3;
+
+a = [1, 2, 3, 4, 5];
+print(a.slice(2, 4));
+
+let x = "5"; 
+let y = 2; 
+console.log(x + y); 
+console.log(x - y);
+
+const arr = ['A', 'N', 'U'];
+arr[10] = 10;
+console.log(arr.length);
+
+const obj1 = {first: 20, second: 30, first: 50};
+console.log(obj1);
+
+print(typeof(NaN));
