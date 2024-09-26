@@ -812,6 +812,18 @@ function findNonRepeatingChar(str){
 
 console.log(findNonRepeatingChar(str))
 
+Anagrams
+// function isAnagram(str1,str2){
+//     if(str1.length == str2.length){
+//         str1 = str1.split("").sort().join("");
+//         str2 = str2.split("").sort().join("");
+//         console.log(str1,str2);
+//         if(str1 == str2) return true; else return false;
+//     }
+//     return false;
+// }
+
+
 //Guess the output
 async function async1() {
   console.log('async1 start');
