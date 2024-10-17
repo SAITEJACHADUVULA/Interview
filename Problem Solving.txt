@@ -877,3 +877,17 @@ const obj1 = {first: 20, second: 30, first: 50};
 console.log(obj1);
 
 print(typeof(NaN));
+
+//Rescrusion
+print 1 to 10 without using loops
+var i = 1;
+function printnumbers(){
+    let i = 1;
+    let endcount = 20;
+    if(i>endcount) return;
+    console.log(i);
+    i++;
+    return printnumbers()
+}
+
+printnumbers();
